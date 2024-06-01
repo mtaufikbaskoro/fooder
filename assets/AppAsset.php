@@ -28,6 +28,8 @@ class AppAsset extends AssetBundle
         'js/dashboard.js',
     ];
     public $depends = [
-        'yidas\yii\bootstrap\BootstrapAsset'
+        'yidas\yii\bootstrap\BootstrapAsset',
+        'yidas\yii\fontawesome\FontAwesomeAsset',
+        'yidas\yii\jquery\JqueryAsset',
     ];
 }

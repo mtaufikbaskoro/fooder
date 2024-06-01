@@ -15,12 +15,14 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="item-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4><?= Html::encode($this->title) ?></h4>
+
+    <hr>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_item' => $model->id_item], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_item' => $model->id_item], [
-            'class' => 'btn btn-danger',
+        <?= Html::a('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', ['update', 'id_item' => $model->id_item], ['class' => 'btn btn-warning btn-sm']) ?>
+        <?= Html::a('<i class="fa fa-trash-o" aria-hidden="true"></i>', ['delete', 'id_item' => $model->id_item], [
+            'class' => 'btn btn-danger btn-sm',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',

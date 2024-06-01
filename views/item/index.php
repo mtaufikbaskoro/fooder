@@ -17,11 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="item-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h2><?= Html::encode('Products') ?></h2>
 
     <p>
-        <?= Html::a('Create Item', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#searchbar" aria-controls="searchbar" aria-expanded="true">Toogle Search</button>
+        <?= Html::a('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Add New Product', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#searchbar" aria-controls="searchbar" aria-expanded="true"><i class="fa fa-search" aria-hidden="true"></i></button>
     </p>
 
     <?php Pjax::begin(); ?>

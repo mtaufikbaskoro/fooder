@@ -37,7 +37,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
   <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Sign out</a>
+        <a class="nav-link px-3" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
         </div>
     </div>
 </header>
@@ -48,23 +48,28 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <div class="position-sticky pt-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
-                    Dashboard
+                    <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="/index.php?r=branch">
-                    Branch
+                    <i class="fa fa-building" aria-hidden="true"></i> <span class="ml-3">Branch</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="/index.php?r=item">
-                    Products
+                    <i class="fa fa-cubes" aria-hidden="true"></i> <span class="ml-2">Products</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="/index.php?r=item">
+                    <i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span class="ml-2">Transaction</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="#">
-                    Users
+                    <i class="fa fa-user" aria-hidden="true"></i> <span class="ml-3">Users</span> 
                     </a>
                 </li>
             </ul>
@@ -74,7 +79,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
             <h3>Selamat Datang, Admin</h3>
             <?php if (!empty($this->params['breadcrumbs'])): ?>
-                <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
+                <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs'], 'options' => ['style' => 'font-size: 14px;']]) ?>
             <?php endif ?>
             <?= Alert::widget() ?>
             <br>

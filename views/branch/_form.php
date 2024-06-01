@@ -8,6 +8,8 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
+<hr>
+
 <div class="branch-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -19,7 +21,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'updated_time')->label(false)->textInput(['hidden' => true, 'value' => date('Y-m-d H:i:s')]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

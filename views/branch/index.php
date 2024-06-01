@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Branch', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Add New Branch', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
     </p>
 
     <hr>
