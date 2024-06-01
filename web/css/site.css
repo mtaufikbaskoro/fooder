@@ -73,12 +73,23 @@ a.desc:after {
     color: #f5f5f5;
 }
 
+a[aria-label="Update"] {
+    padding: 16px;
+}
+
+a[data-sort] {
+    color: #333;
+}
+
 @media(max-width:767px) {
     .nav li > form > button.logout {
         display:block;
         text-align: left;
         width: 100%;
         padding: 10px 0;
+    }
+    a[aria-label="Update"] {
+        padding: 0px;
     }
 }
 

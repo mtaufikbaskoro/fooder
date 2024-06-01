@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb3e05b0432638a5dfa22c1b3d176ed9",
+    "content-hash": "436acd8ef84eca3b6cee7880b43834b7",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -69,6 +69,59 @@
                 "source": "https://github.com/cebe/markdown"
             },
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "deyraka/yii2-material-dashboard",
+            "version": "v1.0.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deyraka/yii2-material-dashboard.git",
+                "reference": "d8affb5032fa0f65801dcfc16d58eb45ca31fba1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deyraka/yii2-material-dashboard/zipball/d8affb5032fa0f65801dcfc16d58eb45ca31fba1",
+                "reference": "d8affb5032fa0f65801dcfc16d58eb45ca31fba1",
+                "shasum": ""
+            },
+            "require": {
+                "mervick/material-design-icons": "~1.0",
+                "mervick/yii2-material-design-icons": "~1.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "deyraka\\materialdashboard\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "deyraka",
+                    "email": "dey.raka53@gmail.com"
+                }
+            ],
+            "description": "Material Dashboard Theme for Yii 2.0",
+            "keywords": [
+                "asset",
+                "asset-bundle",
+                "bootstrap",
+                "bundle",
+                "dashboard",
+                "material",
+                "material-dashboard",
+                "material-design",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/deyraka/yii2-material-dashboard/issues",
+                "source": "https://github.com/deyraka/yii2-material-dashboard/tree/master"
+            },
+            "time": "2019-09-27T07:22:42+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -374,6 +427,105 @@
                 "source": "https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0"
             },
             "time": "2016-10-24T15:52:54+00:00"
+        },
+        {
+            "name": "mervick/material-design-icons",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mervick/material-design-icons.git",
+                "reference": "12b5064d3f791a95172087328ed0c49daac0b8f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mervick/material-design-icons/zipball/12b5064d3f791a95172087328ed0c49daac0b8f7",
+                "reference": "12b5064d3f791a95172087328ed0c49daac0b8f7",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "CC-BY-4.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Izman",
+                    "email": "izmanw@gmail.com"
+                }
+            ],
+            "description": "Google Material Design Icons For Using With Bootstrap",
+            "homepage": "http://github.com/mervick/material-design-icons",
+            "keywords": [
+                "bootstrap",
+                "google",
+                "icons",
+                "icons-web-font",
+                "material",
+                "material-design",
+                "web-font"
+            ],
+            "support": {
+                "issues": "https://github.com/mervick/material-design-icons/issues",
+                "source": "http://github.com/mervick/material-design-icons"
+            },
+            "time": "2015-12-06T07:05:24+00:00"
+        },
+        {
+            "name": "mervick/yii2-material-design-icons",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mervick/yii2-material-design-icons.git",
+                "reference": "b3666248fc89d098372b369796da05495455706a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mervick/yii2-material-design-icons/zipball/b3666248fc89d098372b369796da05495455706a",
+                "reference": "b3666248fc89d098372b369796da05495455706a",
+                "shasum": ""
+            },
+            "require": {
+                "mervick/material-design-icons": "~1.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii\\materialicons\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Izman",
+                    "email": "izmanw@gmail.com"
+                }
+            ],
+            "description": "Asset Bundle For Yii2 Framework With Google Material Design Icons",
+            "homepage": "http://github.com/mervick/yii2-material-design-icons",
+            "keywords": [
+                "asset",
+                "asset-bundle",
+                "bootstrap",
+                "bundle",
+                "google",
+                "icons",
+                "icons-web-font",
+                "material",
+                "material-design",
+                "web-font",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/mervick/yii2-material-design-icons/issues",
+                "source": "http://github.com/mervick/yii2-material-design-icons"
+            },
+            "time": "2015-07-04T10:07:41+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5807,7 +5959,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "deyraka/yii2-material-dashboard": 10
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
