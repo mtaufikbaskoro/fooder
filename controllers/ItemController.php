@@ -40,6 +40,7 @@ class ItemController extends Controller
     {
         $searchModel = new ItemSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+        $this->layout = 'dashboard';
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -55,6 +56,7 @@ class ItemController extends Controller
      */
     public function actionView($id_item)
     {
+        $this->layout = 'dashboard';
         return $this->render('view', [
             'model' => $this->findModel($id_item),
         ]);
@@ -68,6 +70,7 @@ class ItemController extends Controller
     public function actionCreate()
     {
         $model = new Item();
+        $this->layout = 'dashboard';
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -92,6 +95,7 @@ class ItemController extends Controller
     public function actionUpdate($id_item)
     {
         $model = $this->findModel($id_item);
+        $this->layout = 'dashboard';
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id_item' => $model->id_item]);

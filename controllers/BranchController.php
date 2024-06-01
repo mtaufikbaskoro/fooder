@@ -40,6 +40,7 @@ class BranchController extends Controller
     {
         $searchModel = new BranchSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+        $this->layout = 'dashboard';
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -55,6 +56,7 @@ class BranchController extends Controller
      */
     public function actionView($id_branch)
     {
+        $this->layout = 'dashboard';
         return $this->render('view', [
             'model' => $this->findModel($id_branch),
         ]);
@@ -68,6 +70,7 @@ class BranchController extends Controller
     public function actionCreate()
     {
         $model = new Branch();
+        $this->layout = 'dashboard';
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -92,6 +95,7 @@ class BranchController extends Controller
     public function actionUpdate($id_branch)
     {
         $model = $this->findModel($id_branch);
+        $this->layout = 'dashboard';
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id_branch' => $model->id_branch]);
