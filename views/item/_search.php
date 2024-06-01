@@ -20,9 +20,9 @@ use yii\widgets\ActiveForm;
 
     <?php  // echo $form->field($model, 'id_item') ?>
 
-    <?= $form->field($model, 'item_name') ?>
+    <?= $form->field($model, 'item_name')->textInput(['class' => 'form-control']) ?>
 
-    <?= $form->field($model, 'item_price') ?>
+    <?= $form->field($model, 'item_price')->textInput(['class' => 'form-control']) ?>
 
     <?= $form->field($model, 'item_type')->dropDownList([ 'food' => 'Food', 'drink' => 'Drink', ], ['prompt' => '']) ?>
 
@@ -31,8 +31,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'updated_time') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Search', ['class' => 'btn btn-primary btn-sm']) ?>
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary btn-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

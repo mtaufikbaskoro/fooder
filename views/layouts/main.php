@@ -45,14 +45,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 'linkOptions' => ['class' => 'px-3']
             ],
             [
-                'label' => 'About', 
-                'url' => ['/site/about'],
+                'label' => 'Dashboard', 
+                'url' => ['/item/index'],
                 'linkOptions' => ['class' => 'px-3']
-            ],
-            [
-                'label' => 'Contact', 
-                'url' => ['/site/contact'],
-                'linkOptions' => ['class' => 'pr-3']
             ],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
