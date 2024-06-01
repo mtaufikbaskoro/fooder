@@ -1,0 +1,40 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/** @var yii\web\View $this */
+/** @var app\models\ItemSearch $model */
+/** @var yii\widgets\ActiveForm $form */
+?>
+
+<div class="item-search">
+
+    <?php $form = ActiveForm::begin([
+        'action' => ['index'],
+        'method' => 'get',
+        'options' => [
+            'data-pjax' => 1
+        ],
+    ]); ?>
+
+    <?php  // echo $form->field($model, 'id_item') ?>
+
+    <?= $form->field($model, 'item_name') ?>
+
+    <?= $form->field($model, 'item_price') ?>
+
+    <?= $form->field($model, 'item_type')->dropDownList([ 'food' => 'Food', 'drink' => 'Drink', ], ['prompt' => '']) ?>
+
+    <?php // echo $form->field($model, 'created_time') ?>
+
+    <?php // echo $form->field($model, 'updated_time') ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>
