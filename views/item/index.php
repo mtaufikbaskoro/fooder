@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
             <div class="col-lg-4 mb-3">
                 <?php echo Html::a(Html::encode($model->item_name), ['view', 'id_item' => $model->id_item], ['class' => 'link-dark h4 d-inline']) ?>
+                &nbsp;&nbsp;
                 <?php 
                     if ($model->item_type === 'food') {
                         echo Html::tag('span', Html::encode(ucfirst($model->item_type)), ['class' => 'badge bg-danger']);
@@ -44,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo Html::tag('span', Html::encode(ucfirst($model->item_type)), ['class' => 'badge bg-primary']);
                     }
                 ?>
-                <p><?= Html::encode(Yii::$app->formatter->asCurrency($model->item_price, 'IDR')) ?></p>
+                <p class="text-muted"><?= Html::encode(Yii::$app->formatter->asCurrency($model->item_price, 'IDR')) ?></p>
             </div>
         <?php },]) ?>
         </div>
