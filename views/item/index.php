@@ -31,14 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <hr>
 
-    <div class="body-content container-fluid">
-        <div class="row mt-5">
+    <div class="body-content">
+        <div class="row mt-5 item-list mx-auto">
         <?= ListView::widget([
             'dataProvider' => $dataProvider,
             'itemOptions' => ['class' => 'item'],
             'itemView' => function ($model, $key, $index, $widget) {
         ?>
-            <div class="col-lg-4 card">
+            <div class="col-lg-3 card">
                 <div class="card-body">
                     <p>
                         <?php echo Html::a(Html::encode($model->item_name), ['view', 'id_item' => $model->id_item], ['class' => 'text-dark h5']) ?>
