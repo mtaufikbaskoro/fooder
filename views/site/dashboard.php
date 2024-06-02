@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p style="margin-bottom: 0px;"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;Products</p>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-subtitle my-2 text-muted">12</h6>
+                    <h6 class="card-subtitle my-2 text-muted"><?= $productTotal ?></h6>
                 </div>
             </div>
             <div class="card text-center" style="width: 10rem;">
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p style="margin-bottom: 0px;"><i class="fa fa-building" aria-hidden="true"></i>&nbsp;Branch</p>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-subtitle my-2 text-muted">4</h6>
+                    <h6 class="card-subtitle my-2 text-muted"><?= $branchTotal ?></h6>
                 </div>
             </div>
             <div class="card text-center" style="width: 11rem;">

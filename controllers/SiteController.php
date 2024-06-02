@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Dashboard;
 
 class SiteController extends Controller
 {
@@ -128,8 +129,15 @@ class SiteController extends Controller
 
     public function actionDashboard()
     {
+        $productTotal = Dashboard::getProductTotal();
+        $branchTotal = Dashboard::getBranchTotal();
         $this->layout = 'dashboard';
-        
-        return $this->render('dashboard');
+
+        return $this->render('dashboard', 
+            [
+                'productTotal' => $productTotal,
+                'branchTotal' => $branchTotal
+            ]
+        );
     }
 }

@@ -54,22 +54,22 @@ class Branch extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[TbTransactions]].
+     * Gets query for [[Transactions]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTbTransactions()
+    public function getTransactions()
     {
-        return $this->hasMany(TbTransaction::class, ['id_branch' => 'id_branch']);
+        return $this->hasMany(Transaction::class, ['id_branch' => 'id_branch']);
     }
 
     /**
-     * Gets query for [[TbUsers]].
+     * Gets query for [[Users]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTbUsers()
+    public function getUsers()
     {
-        return $this->hasMany(TbUser::class, ['id_branch' => 'id_branch']);
+        return $this->hasMany(User::class, ['id_branch' => 'id_branch']);
     }
 }

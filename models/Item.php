@@ -62,8 +62,8 @@ class Item extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTbTransactionDetails()
+    public function getTransactionDetails()
     {
-        return $this->hasMany(TbTransactionDetail::class, ['id_item' => 'id_item']);
+        return $this->hasMany(TransactionDetail::class, ['id_item' => 'id_item']);
     }
 }
