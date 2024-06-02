@@ -5,6 +5,7 @@
 
 use app\assets\AppAsset;
 use app\widgets\Alert;
+use yii\helpers\Url;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
@@ -18,6 +19,22 @@ $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, 
 $this->registerMetaTag(['name' => 'description', 'content' => $this->params['meta_description'] ?? '']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $this->params['meta_keywords'] ?? '']);
 $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii::getAlias('@web/favicon.ico')]);
+
+$relativeHomeUrl = $_GET['r'];
+
+function filterGet($str) {
+    $backslashPosition = strpos($str, '/');
+    if ($backslashPosition > 1) {
+        return substr($str, 0, $backslashPosition);
+    }
+    return $str;
+    // if (strpos($relativeHomeUrl, '/') > 0) {
+
+    // }
+}
+
+$controller = filterGet($relativeHomeUrl);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -48,26 +65,31 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <div class="position-sticky pt-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
+                    <a 
+                        class="nav-link <?php echo ($controller == 'site') ? 'active' : '' ?>"
+                        aria-current="page" 
+                        href="index.php?r=site%2Fdashboard"
+                    >
                         <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="ml-3">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link" href="/index.php?r=branch">
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($controller == 'branch') ? 'active' : '' ?>" href="/index.php?r=branch">
                     <i class="fa fa-building" aria-hidden="true"></i> <span class="ml-3">Branch</span>
                     </a>
                 </li>
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link" href="/index.php?r=item">
+                <li class="nav-item">
+                    <a class="nav-link <?php echo ($controller == 'item') ? 'active' : '' ?>" href="/index.php?r=item">
                     <i class="fa fa-cubes" aria-hidden="true"></i> <span class="ml-2">Products</span>
                     </a>
                 </li>
-                <li class="nav-item d-flex align-items-center">
+                <li class="nav-item">
                     <a class="nav-link" href="/index.php?r=item">
                     <i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span class="ml-2">Transaction</span>
                     </a>
                 </li>
-                <li class="nav-item d-flex align-items-center">
+                <div class="dropdown-divider"></div>
+                <li class="nav-item">
                     <a class="nav-link" href="#">
                     <i class="fa fa-user" aria-hidden="true"></i> <span class="ml-3">Users</span> 
                     </a>

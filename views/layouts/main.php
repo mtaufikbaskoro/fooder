@@ -46,7 +46,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ],
             [
                 'label' => 'Dashboard', 
-                'url' => ['/item/index'],
+                'url' => ['/site/dashboard'],
                 'linkOptions' => ['class' => 'px-3']
             ],
             Yii::$app->user->isGuest
