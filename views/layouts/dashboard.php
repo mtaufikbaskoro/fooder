@@ -90,7 +90,7 @@ $controller = filterGet($relativeHomeUrl);
                 </li>
                 <div class="dropdown-divider"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link <?php echo ($controller == 'user') ? 'active' : '' ?>" href="/index.php?r=user">
                     <i class="fa fa-user" aria-hidden="true"></i> <span class="ml-3">Users</span> 
                     </a>
                 </li>
