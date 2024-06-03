@@ -187,7 +187,8 @@ class TransactionController extends Controller
      */
     public function actionDelete($id_transaction)
     {
-        $this->findModel($id_transaction)->delete();
+        TbTransactionDetail::deleteTransaction('tb_transaction_detail', $id_transaction);
+        TbTransactionDetail::deleteTransaction('tb_transaction', $id_transaction);
 
         return $this->redirect(['index']);
     }

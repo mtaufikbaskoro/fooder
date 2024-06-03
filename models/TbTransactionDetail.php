@@ -134,4 +134,10 @@ class TbTransactionDetail extends \yii\db\ActiveRecord
         $query = new Query();
         $command = $query->createCommand()->insert('tb_transaction_detail', $arr)->execute();
     }
+
+    public static function deleteTransaction($table, $id)
+    {
+        $query = new Query();
+        $command = $query->createCommand()->delete($table, "id_transaction = $id")->execute();
+    }
 }
