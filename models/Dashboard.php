@@ -7,19 +7,11 @@ use yii\db\ActiveRecord;
 
 class Dashboard extends ActiveRecord 
 {
-    
-    public static function getProductTotal () 
-    {
-        $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT * FROM tb_item");
-        $result = $command->queryAll();
-        return count($result);
-    }
 
-    public static function getBranchTotal () 
+    public static function getTotal ($table)
     {
         $connection = Yii::$app->getDb();
-        $command = $connection->createCommand("SELECT * FROM tb_branch");
+        $command = $connection->createCommand("SELECT * FROM $table");
         $result = $command->queryAll();
         return count($result);
     }

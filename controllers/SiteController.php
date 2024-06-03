@@ -97,14 +97,17 @@ class SiteController extends Controller
 
     public function actionDashboard()
     {
-        $productTotal = Dashboard::getProductTotal();
-        $branchTotal = Dashboard::getBranchTotal();
+        $productTotal = Dashboard::getTotal('tb_item');
+        $branchTotal = Dashboard::getTotal('tb_branch');
+        $transactionTotal = Dashboard::getTotal('tb_transaction');
+
         $this->layout = 'dashboard';
 
         return $this->render('dashboard', 
             [
                 'productTotal' => $productTotal,
-                'branchTotal' => $branchTotal
+                'branchTotal' => $branchTotal,
+                'transactionTotal' => $transactionTotal
             ]
         );
     }

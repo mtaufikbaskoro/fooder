@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p style="margin-bottom: 0px;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>&nbsp;Transaction</p>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-subtitle my-2 text-muted">122</h6>
+                    <h6 class="card-subtitle my-2 text-muted"><?= $transactionTotal ?></h6>
                 </div>
             </div>
         </div>
