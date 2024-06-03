@@ -28,14 +28,14 @@ use yii\widgets\Pjax;
     
     </div>
         
-        <div class="panel panel-default">
+        <div class="panel panel-default <?= $isUpdate ? 'd-none' : '' ?>">
             <div class="panel-body">
             <?php DynamicFormWidget::begin([
                 'widgetContainer' => 'dynamicform_wrapper',
                 'widgetBody' => '.container-items',
                 'widgetItem' => '.house-item',
                 'limit' => 10,
-                'min' => 1,
+                'min' => 0,
                 'insertButton' => '.add-house',
                 'deleteButton' => '.remove-house',
                 'model' => $modelsTransactionDetail[0],

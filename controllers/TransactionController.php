@@ -104,7 +104,6 @@ class TransactionController extends Controller
             if ($model->load($this->request->post())) {
                 $modelsTransactionDetail = Model::createMultiple(TbTransactionDetail::classname());
                 if (Model::loadMultiple($modelsTransactionDetail, Yii::$app->request->post())){
-                    echo '<pre>';
                     
                     foreach ($modelsTransactionDetail as $modelTransactionDetail) {
                         $itemPrice = TbTransactionDetail::getItemPrice($modelTransactionDetail->id_item);
@@ -166,6 +165,7 @@ class TransactionController extends Controller
         $this->layout = 'dashboard';
         $model = $this->findModel($id_transaction);
 
+
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id_transaction' => $model->id_transaction]);
         }
@@ -205,6 +205,14 @@ class TransactionController extends Controller
             return $model;
         }
 
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function findDetailModel($id_transaction)
+    {
+        if (($model = TbTransactionDetail::findAll(['id_transaction' => $id_transaction])) !== null) {
+            return $model;
+        }
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

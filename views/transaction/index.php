@@ -49,8 +49,14 @@ $this->params['breadcrumbs'][] = $this->title;
             //'updated_time',
             [
                 'class' => ActionColumn::className(),
+                'template' => '{view}&nbsp;&nbsp;&nbsp;{delete}',
                 'urlCreator' => function ($action, TbTransaction $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id_transaction' => $model->id_transaction]);
+                    if ($action === 'view'){
+                        return Url::toRoute([$action, 'id_transaction' => $model->id_transaction]);
+                    }
+                    if ($action === 'delete'){
+                        return Url::toRoute([$action, 'id_transaction' => $model->id_transaction]);
+                    }
                  }
             ],
         ],
