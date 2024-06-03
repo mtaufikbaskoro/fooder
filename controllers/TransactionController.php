@@ -65,9 +65,17 @@ class TransactionController extends Controller
      */
     public function actionView($id_transaction)
     {
+        $transactionItems = TbTransactionDetail::getTransactionDetail($id_transaction);
+        $renderArr = [];
+        foreach ($transactionItems as $transactionItem) {
+            $itemName = TbTransactionDetail::getItemName($transactionItem['id_item']);
+            array_push($transactionItem, $itemName[0]['item_name']);
+            array_push($renderArr, $transactionItem);
+        }
         $this->layout = 'dashboard';
         return $this->render('view', [
             'model' => $this->findModel($id_transaction),
+            'detailTransactions' => $renderArr
         ]);
     }
 

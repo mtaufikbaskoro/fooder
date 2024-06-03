@@ -97,6 +97,26 @@ class TbTransactionDetail extends \yii\db\ActiveRecord
         return $item;
     }
 
+    public static function getItemName($id)
+    {
+        $rows = (new \yii\db\Query())
+            ->select(['item_name'])
+            ->from('tb_item')
+            ->where(['id_item' => $id])
+            ->all();
+        return $rows;
+    }
+
+    public static function getTransactionDetail($id)
+    {
+        $rows = (new \yii\db\Query())
+            ->select(['id_item', 'id_transaction', 't_item_quantity', 't_item_price'])
+            ->from('tb_transaction_detail')
+            ->where(['id_transaction' => $id])
+            ->all();
+        return $rows;
+    }
+
     public static function getLatestTransaction()
     {
         $rows = (new \yii\db\Query())
