@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="item-index">
 
-    <h2><?= Html::encode('Products') ?></h2>
+    <h4><?= Html::encode('Products') ?></h4>
 
     <p>
         <?= Html::a('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Add New Product', ['create'], ['class' => 'btn btn-success btn-sm']) ?>

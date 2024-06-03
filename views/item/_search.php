@@ -24,7 +24,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'item_price')->textInput(['class' => 'form-control']) ?>
 
-    <?= $form->field($model, 'item_type')->dropDownList([ 'food' => 'Food', 'drink' => 'Drink', ], ['prompt' => '']) ?>
+    <hr>
+
+    <?= Html::activeDropDownList($model, 'item_type', ['food' => 'Food', 'drink' => 'Drink'], ['class' => 'form-control mb-3', 'prompt' => 'all item type']) ?>
 
     <?php // echo $form->field($model, 'created_time') ?>
 

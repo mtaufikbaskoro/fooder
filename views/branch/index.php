@@ -1,6 +1,6 @@
 <?php
 
-use app\models\Branch;
+use app\models\TbBranch;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="branch-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4><?= Html::encode($this->title) ?></h4>
 
     <p>
         <?= Html::a('<i class="fa fa-plus-square-o" aria-hidden="true"></i> Add New Branch', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
@@ -35,12 +35,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 // 'id_branch',
                 'branch_name',
-                'branch_status',
+                [
+                    'attribute' => 'branch_status',
+                    'filter' => Html::activeDropDownList($searchModel, 'branch_status', ['active' => 'active', 'inactive' => 'inactive'], ['class' => 'form-control', 'prompt' => 'all'])
+                ],
                 // 'created_time',
                 // 'updated_time',
                 [
                     'class' => ActionColumn::className(),
-                    'urlCreator' => function ($action, Branch $model, $key, $index, $column) { 
+                    'urlCreator' => function ($action, TbBranch $model, $key, $index, $column) { 
                         return Url::toRoute([$action, 'id_branch' => $model->id_branch]);
                     }
                 ],

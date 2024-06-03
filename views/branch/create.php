@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\models\Branch $model */
+/** @var app\models\TbBranch $model */
 
 $this->title = 'Create Branch';
 $this->params['breadcrumbs'][] = ['label' => 'Branches', 'url' => ['index']];
@@ -11,10 +11,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="branch-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4><?= Html::encode($this->title) ?></h4>
 
     <?= $this->render('_form', [
-        'model' => $model,
+        'model' => $model
     ]) ?>
 
 </div>

@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\Item;
+use app\models\TbItem;
 use app\models\ItemSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -69,7 +69,7 @@ class ItemController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Item();
+        $model = new TbItem();
         $this->layout = 'dashboard';
 
         if ($this->request->isPost) {
@@ -129,7 +129,7 @@ class ItemController extends Controller
      */
     protected function findModel($id_item)
     {
-        if (($model = Item::findOne(['id_item' => $id_item])) !== null) {
+        if (($model = TbItem::findOne(['id_item' => $id_item])) !== null) {
             return $model;
         }
 

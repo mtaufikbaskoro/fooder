@@ -84,7 +84,7 @@ $controller = filterGet($relativeHomeUrl);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/index.php?r=item">
+                    <a class="nav-link <?php echo ($controller == 'transaction') ? 'active' : '' ?>" href="/index.php?r=transaction">
                     <i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span class="ml-2">Transaction</span>
                     </a>
                 </li>

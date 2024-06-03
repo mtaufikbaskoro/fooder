@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "tb_branch".
@@ -16,7 +17,7 @@ use Yii;
  * @property TbTransaction[] $tbTransactions
  * @property TbUser[] $tbUsers
  */
-class Branch extends \yii\db\ActiveRecord
+class TbBranch extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -58,9 +59,9 @@ class Branch extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTransactions()
+    public function getTbTransactions()
     {
-        return $this->hasMany(Transaction::class, ['id_branch' => 'id_branch']);
+        return $this->hasMany(TbTransaction::class, ['id_branch' => 'id_branch']);
     }
 
     /**
@@ -68,8 +69,15 @@ class Branch extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getUsers()
+    public function getTbUsers()
     {
-        return $this->hasMany(User::class, ['id_branch' => 'id_branch']);
+        return $this->hasMany(TbUser::class, ['id_branch' => 'id_branch']);
+    }
+
+    public static function getAllBranches()
+    {
+        $branch = TbBranch::find()->all();
+        $branch = ArrayHelper::map($branch, 'id_branch', 'branch_name');
+        return $branch;
     }
 }

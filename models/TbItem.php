@@ -2,6 +2,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 
 date_default_timezone_set('Asia/Jakarta');
@@ -16,9 +17,9 @@ date_default_timezone_set('Asia/Jakarta');
  * @property string $created_time
  * @property string $updated_time
  *
- * @property TbTransactionDetail[] $tbTransactionDetails
+ * @property TransactionDetail[] $tbTransactionDetails
  */
-class Item extends \yii\db\ActiveRecord
+class TbItem extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -65,5 +66,12 @@ class Item extends \yii\db\ActiveRecord
     public function getTransactionDetails()
     {
         return $this->hasMany(TransactionDetail::class, ['id_item' => 'id_item']);
+    }
+
+    public static function getAllItems()
+    {
+        $item = TbItem::find()->all();
+        $item = ArrayHelper::map($item, 'id_item', 'item_name');
+        return $item;
     }
 }

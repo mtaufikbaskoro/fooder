@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'item_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'item_price')->textInput() ?>
+    <?= $form->field($model, 'item_price')->textInput(['type' => 'number']) ?>
 
     <?= $form->field($model, 'item_type')->dropDownList([ 'food' => 'Food', 'drink' => 'Drink', ], ['prompt' => '']) ?>
 

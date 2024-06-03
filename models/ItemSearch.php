@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Item;
+use app\models\TbItem;
 
 /**
  * ItemSearch represents the model behind the search form of `app\models\Item`.
  */
-class ItemSearch extends Item
+class ItemSearch extends TbItem
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class ItemSearch extends Item
      */
     public function search($params)
     {
-        $query = Item::find();
+        $query = TbItem::find();
 
         // add conditions that should always apply here
 

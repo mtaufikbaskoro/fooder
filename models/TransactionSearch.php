@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Branch;
+use app\models\Transaction;
 
 /**
- * BranchSearch represents the model behind the search form of `app\models\Branch`.
+ * TransactionSearch represents the model behind the search form of `app\models\Transaction`.
  */
-class BranchSearch extends TbBranch
+class TransactionSearch extends TbTransaction
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class BranchSearch extends TbBranch
     public function rules()
     {
         return [
-            [['id_branch'], 'integer'],
-            [['branch_name', 'branch_status', 'created_time', 'updated_time'], 'safe'],
+            [['id_transaction', 'id_branch', 'subtotal'], 'integer'],
+            [['transaction_date', 'created_time', 'updated_time'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class BranchSearch extends TbBranch
      */
     public function search($params)
     {
-        $query = TbBranch::find();
+        $query = TbTransaction::find();
 
         // add conditions that should always apply here
 
@@ -58,13 +58,13 @@ class BranchSearch extends TbBranch
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'id_transaction' => $this->id_transaction,
             'id_branch' => $this->id_branch,
+            'subtotal' => $this->subtotal,
+            'transaction_date' => $this->transaction_date,
             'created_time' => $this->created_time,
             'updated_time' => $this->updated_time,
         ]);
-
-        $query->andFilterWhere(['like', 'branch_name', $this->branch_name])
-            ->andFilterWhere(['=', 'branch_status', $this->branch_status]);
 
         return $dataProvider;
     }

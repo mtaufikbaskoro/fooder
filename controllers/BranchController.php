@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\Branch;
+use app\models\TbBranch;
 use app\models\BranchSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -69,7 +69,7 @@ class BranchController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Branch();
+        $model = new TbBranch();
         $this->layout = 'dashboard';
 
         if ($this->request->isPost) {
@@ -129,10 +129,12 @@ class BranchController extends Controller
      */
     protected function findModel($id_branch)
     {
-        if (($model = Branch::findOne(['id_branch' => $id_branch])) !== null) {
+        if (($model = TbBranch::findOne(['id_branch' => $id_branch])) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
+
+?>
