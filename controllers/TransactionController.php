@@ -88,7 +88,7 @@ class TransactionController extends Controller
     {
         $modelsTransactionDetail = [new TbTransactionDetail];
         $itemName = TbItem::getAllItems();
-        $branchName = TbBranch::getAllBranches();
+        $branchName = TbBranch::getAllActiveBranches();
         $model = new TbTransaction();
         // echo '<pre>';
         // print_r($_POST);

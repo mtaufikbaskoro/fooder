@@ -74,9 +74,9 @@ class TbBranch extends \yii\db\ActiveRecord
         return $this->hasMany(TbUser::class, ['id_branch' => 'id_branch']);
     }
 
-    public static function getAllBranches()
+    public static function getAllActiveBranches()
     {
-        $branch = TbBranch::find()->all();
+        $branch = TbBranch::find()->where(['branch_status' => 'active'])->all();
         $branch = ArrayHelper::map($branch, 'id_branch', 'branch_name');
         return $branch;
     }

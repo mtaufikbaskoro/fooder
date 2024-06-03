@@ -38,13 +38,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             // 'id_transaction',
             'tbBranch.branch_name',
+            'transaction_date',
             [
                 'attribute' => 'subtotal',
                 'value' => function ($model) {
                     return \Yii::$app->formatter->asCurrency($model->subtotal, 'IDR');
                 },
             ],
-            'transaction_date',
             // 'created_time',
             //'updated_time',
             [
