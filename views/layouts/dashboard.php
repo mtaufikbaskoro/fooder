@@ -51,11 +51,11 @@ $controller = filterGet($relativeHomeUrl);
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h2 class="text-center">FOODER</h2>
+            <a href="/index.php?r=site"><h2 class="text-center">FOODER</h2></a>
         </div>
 
         <ul class="list-unstyled components">
-            <h6 class="text-center mb-3">Selamat datang, Admin</h6>
+            <h6 class="text-center mb-3">Selamat datang, Administrator</h6>
             <li class="<?php echo ($controller == 'site') ? 'active' : '' ?>">
                 <a 
                     class="nav-link"
