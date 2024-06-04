@@ -1,3 +1,9 @@
+$(document).ready(function () {
+  $("#sidebarCollapse").on("click", function () {
+    $("#sidebar").toggleClass("active");
+  });
+});
+
 $(".dynamicform_wrapper").on("beforeInsert", function (e, item) {
   console.log("beforeInsert");
 });

@@ -3,6 +3,8 @@
 /** @var yii\web\View $this */
 /** @var string $content */
 
+\yii\web\JqueryAsset::register($this);
+
 use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\helpers\Url;
@@ -46,70 +48,107 @@ $controller = filterGet($relativeHomeUrl);
 <body>
 <?php $this->beginBody() ?>
 
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/site/index">Fooder</a>
-    <a class="navbar-toggler position-absolute d-md-none collapsed" href="#sidebarMenu" data-toggle="collapse" aria-controls="sidebarMenu" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
-    </a>
-  <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="text-center">FOODER</h2>
         </div>
-    </div>
-</header>
 
-<div class="container-fluid">
-    <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a 
-                        class="nav-link <?php echo ($controller == 'site') ? 'active' : '' ?>"
-                        aria-current="page" 
-                        href="index.php?r=site%2Fdashboard"
-                    >
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="ml-3">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($controller == 'branch') ? 'active' : '' ?>" href="/index.php?r=branch">
-                    <i class="fa fa-building" aria-hidden="true"></i> <span class="ml-3">Branch</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($controller == 'item') ? 'active' : '' ?>" href="/index.php?r=item">
-                    <i class="fa fa-cubes" aria-hidden="true"></i> <span class="ml-2">Products</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($controller == 'transaction') ? 'active' : '' ?>" href="/index.php?r=transaction">
-                    <i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span class="ml-2">Transaction</span>
-                    </a>
-                </li>
-                <div class="dropdown-divider"></div>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($controller == 'user') ? 'active' : '' ?>" href="/index.php?r=user">
-                    <i class="fa fa-user" aria-hidden="true"></i> <span class="ml-3">Users</span> 
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <ul class="list-unstyled components">
+            <h6 class="text-center mb-3">Selamat datang, Admin</h6>
+            <li class="<?php echo ($controller == 'site') ? 'active' : '' ?>">
+                <a 
+                    class="nav-link"
+                    aria-current="page" 
+                    href="index.php?r=site%2Fdashboard"
+                >
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="ml-3">Dashboard</span>
+                </a>
+            </li>
+            <li class="<?php echo ($controller == 'branch') ? 'active' : '' ?>">
+                <a href="#branchSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-building" aria-hidden="true"></i> <span class="ml-3">Branches</span></a>
+                <ul class="collapse list-unstyled" id="branchSubmenu">
+                    <li>
+                        <a class="nav-link" href="/index.php?r=branch">
+                            <span>All Branches</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/index.php?r=branch%2Fcreate">
+                            <span>Create New Branch</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="<?php echo ($controller == 'item') ? 'active' : '' ?>">
+                <a href="#itemSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes" aria-hidden="true"></i> <span class="ml-3">Items</span></a>
+                <ul class="collapse list-unstyled" id="itemSubmenu">
+                    <li>
+                        <a class="nav-link" href="/index.php?r=item">
+                            <span>All Items</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/index.php?r=item%2Fcreate">
+                            <span>Create New Item</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="<?php echo ($controller == 'transaction') ? 'active' : '' ?>">
+                <a href="#transactionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span class="ml-3">Transactions</span></a>
+                <ul class="collapse list-unstyled" id="transactionSubmenu">
+                    <li>
+                        <a class="nav-link" href="/index.php?r=transaction">
+                            <span>All Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/index.php?r=item%2Fcreate">
+                            <span>Create New Transaction</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="<?php echo ($controller == 'user') ? 'active' : '' ?>">
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-users" aria-hidden="true"></i> <span class="ml-3">Users</span></a>
+                <ul class="collapse list-unstyled" id="userSubmenu">
+                    <li>
+                        <a class="nav-link" href="/index.php?r=user">
+                            <span>All Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/index.php?r=user%2Fcreate">
+                            <span>Create New User</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fa fa-align-left"></i>
+                </button>
+            </div>
         </nav>
-        <div class="col-md-3 col-lg-2 d-md-block"></div>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
-            <h3>Selamat Datang, Admin</h3>
-            <?php if (!empty($this->params['breadcrumbs'])): ?>
-                <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs'], 'options' => ['style' => 'font-size: 14px;']]) ?>
-            <?php endif ?>
-            <?= Alert::widget() ?>
-            <br>
-            <?= $content ?> 
-        </main>
-    </div>
+        <?php if (!empty($this->params['breadcrumbs'])): ?>
+            <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs'], 'options' => ['style' => 'font-size: 14px;']]) ?>
+        <?php endif ?>
+        <?= Alert::widget() ?>
+        <br>
+        <?= $content ?> 
+    </main>
 </div>
-
 <?php $this->endBody() ?>
 </body>
 </html>

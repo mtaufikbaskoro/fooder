@@ -78,6 +78,10 @@ a[aria-label="Update"] {
     color: #f0ad4e;
 }
 
+a[aria-label="View"] {
+    color: #3B71CA;
+}
+
 a[aria-label="Delete"] {
     color: #d9534f;
 }
